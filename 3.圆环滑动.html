@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+        html,body{
+            margin:0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .box{
+            margin:200px auto;
+            padding: 0 100px;
+            width: 100px;
+            height: 100px;
+            perspective: 800px;
+            -webkit-perspective: 800px;
+            border: 1px solid #000;
+        }
+        .div{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            transform-origin: center center -153px;
+            -webkit-transform-origin: center center -153px;
+        }
+        .div div{
+            position: absolute;
+            left:0;
+            top: 100px;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            transform-origin: top;
+            -webkit-transform-origin: top;
+            transform: rotateX(-36deg);
+            -webkit-transform: rotateX(-36deg);
+        }
+        .div>div{
+            top: 0;
+            transform: rotateX(0deg);
+            -webkit-transform: rotateX(0deg);
+        }
+        .div span{
+            display: block;
+            width: 98px;
+            height: 98px;
+            border: 1px solid #000;
+            background: #ccc;
+            text-align: center;
+            font: 50px/98px '微软雅黑';
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="div">
+    </div>
+</div>
+<script src="js/touchScroll.js"></script>
+<script>
+
+    window.onload = function () {
+        var box = document.getElementsByClassName('box')[0];
+        setLayout();
+
+        var scroll = new MScroll(box, 'y', false, true, true);
+
+        scroll.onscroll = function () {
+            var deg = -this.iScroll;
+            this.oScroll.style.transform = this.oScroll.style.WebkitTransform = "rotateX("+ deg +"deg)";
+        }
+    };
+
+
+    function setLayout() {
+        var div = document.getElementsByClassName('div')[0];
+        var str = '';
+
+        for (var i = 0; i < 10; i++) {
+            str = '<div><span>' + (9 - i) + '</span>' + str + '</div>'
+        }
+
+        div.innerHTML = str;
+    }
+
+
+
+</script>
+</body>
+</html>

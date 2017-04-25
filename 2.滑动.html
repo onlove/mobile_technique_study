@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+        #box{
+            position: absolute;
+            left:0;
+            top: 0;
+            right:0;
+            bottom:0;
+            overflow: hidden;
+        }
+        #div{
+
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="div">
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+        页面内容<br/>
+    </div>
+</div>
+<script src="js/touchScroll.js"></script>
+<script>
+    var box = new MScroll('box', 'y', true, false, true);
+    box.onscrollstart = function () {
+        console.log('滑动开始')
+    }
+
+    box.onscroll = function () {
+        console.log(this.iScroll)
+    }
+
+    box.onscrollend = function () {
+        clearInterval(this.timer)
+        console.log('滑动结束')
+    }
+
+</script>
+</body>
+</html>
